@@ -12,10 +12,17 @@ public class MainActivity extends AppCompatActivity {
 
     EditText userName,passWord;
 
-    String[] user = {"a","b"};
-    String[] pass = {"a","b"};
+    String[] user = {"a","b","c"};
+    String[] pass = {"a","b","c"};
 
     Button login;
+
+    int flag = 0;
+
+    String u,p;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +37,37 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Button Clicked!!!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "Button Clicked!!!", Toast.LENGTH_SHORT).show();
+                u = userName.getText().toString();
+                p = passWord.getText().toString();
+
+                if(u != "" && p != "") {
+
+
+                    for (int i = 0; i < user.length; i++) {
+
+                        if(u.equals(user[i])){
+
+                            flag = 1;
+
+                            if(p.equals(pass[i])){
+                                Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(MainActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
+                            }
+                        }else{
+                            flag = 0;
+                        }
+
+                    }
+
+
+                    if(flag == 0){
+                        Toast.makeText(MainActivity.this, "Invalid username", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                }
 
             }
         });
