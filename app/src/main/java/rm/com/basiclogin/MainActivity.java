@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if(u != "" && p != "") {
 
+                    flag = 0;
+
 
                     for (int i = 0; i < user.length; i++) {
 
@@ -52,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
                             if(p.equals(pass[i])){
                                 Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                                break;
                             }else{
                                 Toast.makeText(MainActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
+                                break;
                             }
-                        }else{
-                            flag = 0;
                         }
 
                     }
