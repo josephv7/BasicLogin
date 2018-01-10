@@ -17,6 +17,12 @@
         android:inputType="textPersonName"
         android:hint="Name"/>
 
+    <!--The property hint is used to show hint inside the edit text.-->
+    <!--We can use the property text also but the user will first have to clear the contents inside the edit text before entering the required data.-->
+    <!--You can try replacing hint with text-->
+
+
+
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
@@ -24,6 +30,8 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="Password"/>
+
+    <!--inputType is set to textPassword so that the password entered by the user will be not be visible-->
 
     <Button
         android:layout_width="match_parent"
